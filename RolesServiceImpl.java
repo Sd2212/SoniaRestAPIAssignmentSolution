@@ -24,7 +24,7 @@ public class RolesServiceImpl implements RolesService {
 	public String addRole(Roles role) {
 		roleRepository.save(role);
 		roleRepository.flush();
-		return " Added a role" ;
+		return " Added a role";
 	}
 
 }

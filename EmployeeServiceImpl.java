@@ -17,7 +17,7 @@ import com.mgmt.emp.repository.EmployeeRepository;
 import com.mgmt.emp.service.EmployeeService;
 
 @Service
-public class EmployeeServiceImpl implements EmployeeService{
+public class EmployeeServiceImpl implements EmployeeService {
 
 	@Autowired
 	EmployeeRepository empRepository;
@@ -31,33 +31,33 @@ public class EmployeeServiceImpl implements EmployeeService{
 	public Optional<Employee> findAnEmployeeById(Integer id) {
 		return empRepository.findById(id);
 	}
-	
+
 	@Transactional
 	public String addEmployee(Employee employee) {
 		empRepository.save(employee);
 		empRepository.flush();
 		return "Employee Added";
 	}
-	
+
 	@Transactional
 	public String deleteById(Integer id) {
 		empRepository.deleteById(id);
 		return "Deleted";
 	}
-	
+
 	@Transactional
-	public List<Employee> sortedEmployeesByFirstName(Direction direction){
+	public List<Employee> sortedEmployeesByFirstName(Direction direction) {
 		return empRepository.findAll(Sort.by(direction, "firstname"));
 	}
 
 	@Transactional
 	public List<Employee> searchByFirstname(String firstname) {
-		return  empRepository.findByFirstname(firstname);	 
-		
+		return empRepository.findByFirstname(firstname);
+
 	}
 
 	@Transactional
-	public Employee update(Integer id, Employee employee) {		
+	public Employee update(Integer id, Employee employee) {
 		return empRepository.save(employee);
 	}
 

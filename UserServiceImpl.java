@@ -10,7 +10,7 @@ import com.mgmt.emp.repository.UserRepository;
 import com.mgmt.emp.service.UserService;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserRepository userRepository;

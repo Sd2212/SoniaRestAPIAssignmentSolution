@@ -11,11 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mgmt.emp.model.Roles;
 import com.mgmt.emp.service.RolesService;
 
-
 @RestController
 @RequestMapping("/role")
 public class RoleController {
-	
+
 	@Autowired
 	RolesService roleService;
 

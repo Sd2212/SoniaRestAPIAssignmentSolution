@@ -14,7 +14,7 @@ import com.mgmt.emp.service.UserService;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-	
+
 	@Autowired
 	UserService userService;
 
@@ -24,9 +24,8 @@ public class UserController {
 	}
 
 	@PostMapping("/addUser")
-	public String addUser( @RequestBody  User user) {
+	public String addUser(@RequestBody User user) {
 		return userService.addUser(user);
 	}
-
 
 }

@@ -14,17 +14,17 @@ import com.mgmt.emp.model.Employee;
 public interface EmployeeService {
 
 	public List<Employee> showEmployees();
-	
-	public String addEmployee(Employee employee) ;
-	
+
+	public String addEmployee(Employee employee);
+
 	public Optional<Employee> findAnEmployeeById(Integer id);
-	
+
 	public String deleteById(Integer id);
-	
+
 	public List<Employee> sortedEmployeesByFirstName(Direction direction);
-	
+
 	public List<Employee> searchByFirstname(String firstname);
-	
-	public Employee update(Integer id, Employee employee );
+
+	public Employee update(Integer id, Employee employee);
 
 }

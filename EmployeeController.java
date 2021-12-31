@@ -35,7 +35,7 @@ public class EmployeeController {
 	}
 
 	@GetMapping("/findEmployee/{id}")
-	public Optional<Employee> findAnEmployeeById( @PathVariable Integer id) {
+	public Optional<Employee> findAnEmployeeById(@PathVariable Integer id) {
 		return employeeService.findAnEmployeeById(id);
 	}
 
@@ -48,18 +48,17 @@ public class EmployeeController {
 	public List<Employee> sortedEmployeesByFirstName(Direction direction) {
 		return employeeService.sortedEmployeesByFirstName(direction);
 	}
-	
-	@GetMapping("/search/{firstname}")	
+
+	@GetMapping("/search/{firstname}")
 	public List<Employee> searchByFirstname(@PathVariable String firstname) {
-		return employeeService.searchByFirstname(firstname);		
-		
-	}
-	
-	@PutMapping("/update/{id}")
-	public Employee update(@PathVariable Integer id, @RequestBody Employee employee ) {
-		return  employeeService.update(id, employee);
-		
+		return employeeService.searchByFirstname(firstname);
+
 	}
 
+	@PutMapping("/update/{id}")
+	public Employee update(@PathVariable Integer id, @RequestBody Employee employee) {
+		return employeeService.update(id, employee);
+
+	}
 
 }
