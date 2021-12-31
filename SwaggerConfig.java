@@ -17,22 +17,17 @@ public class SwaggerConfig {
 
 	@Bean
 	public Docket employeeApi() {
-		return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())
-				.groupName("Employee-Api").select()
+		return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).groupName("Employee-Api").select()
 				.apis(RequestHandlerSelectors.basePackage("com.mgmt.emp.controller")).build();
 	}
 
 	private ApiInfo apiInfo() {
-		
-		return new ApiInfoBuilder().title("Employee-Api")
-				.description("Empolyee Api reference for Developers")
+
+		return new ApiInfoBuilder().title("Employee-Api").description("Empolyee Api reference for Developers")
 				.termsOfServiceUrl("https://Employee.com")
-				.contact(new Contact("Empolyee-Api","https://Employee.com","Employee@gmail.com"))
-				.license("Employee License")
-				.licenseUrl("https://Employee.com")
-				.version("1.0")
-				.build();
-						
+				.contact(new Contact("Empolyee-Api", "https://Employee.com", "Employee@gmail.com"))
+				.license("Employee License").licenseUrl("https://Employee.com").version("1.0").build();
+
 	}
 
 }
